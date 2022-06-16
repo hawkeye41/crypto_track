@@ -24,8 +24,8 @@ const Coin = () => {
   return (
     <>
     <div className='coin-container'>
-      <div className='content'>
-      <h1>{coin.name}</h1>
+      <div className='sym'>
+      {coin.image ? <img src={coin.image.large}/>:null}
       </div>
       <div className='content'>
         <div className='rank'>

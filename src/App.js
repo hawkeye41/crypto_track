@@ -3,11 +3,12 @@ import axios from "axios";
 import Navbar from "./components/Navbar";
 import Coins from "./components/Coins";
 import Coin from './routes/Coin'
+
 import './index.css'
 import {Routes,Route} from 'react-router-dom'
 function App() {
   const [coins,setCoins]=useState([])
-
+ 
   const url='https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=10&page=1&sparkline=false'
   useEffect(()=>{
     axios.get(url).then((response)=>{
@@ -17,16 +18,20 @@ function App() {
       console.log(error);
     })
   },[])
+ 
   return (
    <>
    <Navbar/>
    <Routes>
-     <Route path='/' element={ <Coins coins={coins}/>}/>
+     <Route path='/' element={ <Coins coins={coins}/>}  
+     />
      <Route path='/coin' element={<Coin/>}>
        <Route path=':coinId' element={<Coin/>}/>
       </Route>
    </Routes>
-  
+
+
+    
    </>
   );
 }

@@ -8,6 +8,16 @@
    box-shadow: 0px 0px 12px #18191b;
    border-radius: 8px;
 }
+.sym{
+
+      display: flex;
+      justify-content: center;
+      
+}
+.sym img{
+   width: 150px;
+   height: 150px;
+}
 .rank {
    margin: .5 0;
 }
@@ -40,7 +50,7 @@
    grid-template-columns: repeat(2, 1fr);
 }
 
-.info .coin-heading {
+.info .coin-heading{
    display: flex;
    align-items: center;
    margin: 1rem 0;
